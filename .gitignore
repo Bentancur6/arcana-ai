@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+server/data.json
+server/data.bak*.json
+贝柚_塔罗高清图片/
+牌阵/
+backup/
+backups/
+*.png
+*.jpg
+*.jpeg
+*.log
+.DS_Store
