@@ -1,0 +1,282 @@
+/* ═══════════════════════════════════════════════════
+   塔罗工作台 · 神秘主题 · Mystical Dark Theme
+   ═══════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+/* ── Design Tokens ───────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-base:        #060608;
+  --bg-panel:       rgba(255, 255, 255, 0.025);
+  --bg-panel-raised:rgba(255, 255, 255, 0.04);
+  --bg-dropdown:    #0c0a14;
+
+  /* Borders */
+  --border-dim:     rgba(212, 208, 240, 0.07);
+  --border:         rgba(212, 208, 240, 0.13);
+  --border-accent:  rgba(212, 208, 240, 0.35);
+
+  /* Text */
+  --text-main:      #eceaff;
+  --text-primary:   #d4d0f0;
+  --text-muted:     #8a86a8;
+  --text-ghost:     #3e3c54;
+
+  /* Accent */
+  --accent:         #d4d0f0;
+  --accent-dim:     rgba(212, 208, 240, 0.1);
+
+  /* State */
+  --danger:         #c04068;
+  --danger-border:  rgba(192, 64, 104, 0.4);
+  --success:        #5ea888;
+
+  /* Buttons */
+  --btn-p-from:     #e2deff;
+  --btn-p-to:       #b8b2d8;
+  --btn-p-text:     #07060f;
+
+  /* Typography */
+  --font-title:     'Cinzel', Georgia, serif;
+  --font-body:      'Cormorant Garamond', Palatino, Georgia, serif;
+}
+
+/* ── Reset ───────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Base ────────────────────────────────────────── */
+html {
+  background: var(--bg-base);
+}
+
+body {
+  background-color: var(--bg-base);
+  background-image: radial-gradient(
+    ellipse at 50% -15%,
+    rgba(180, 168, 240, 0.13) 0%,
+    transparent 58%
+  );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ── Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar        { width: 4px; height: 4px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: rgba(212, 208, 240, 0.2); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(212, 208, 240, 0.38); }
+
+/* ── Form Elements ───────────────────────────────── */
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-ghost);
+  opacity: 1;
+}
+
+input:focus,
+textarea:focus {
+  border-color: rgba(212, 208, 240, 0.38) !important;
+  outline: none;
+}
+
+/* ════════════════════════════════════════════════════
+   COMPONENT CLASSES
+   ════════════════════════════════════════════════════ */
+
+/* ── Page Header / Title Block ───────────────────── */
+.oracle-header {
+  text-align: center;
+  padding: 2.5rem 0 2.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.oracle-header__eyebrow {
+  font-family: var(--font-title);
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--text-ghost);
+  letter-spacing: 0.7em;
+  text-transform: uppercase;
+  /* compensate letter-spacing optical shift */
+  text-indent: 0.7em;
+}
+
+.oracle-header__title {
+  font-family: var(--font-title);
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: 0.7em;
+  text-indent: 0.7em;  /* compensate trailing gap */
+  line-height: 1.2;
+}
+
+.oracle-header__subtitle {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: var(--text-ghost);
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  margin-top: 0.2rem;
+}
+
+/* ── Divider label (section headers inside cards) ── */
+.section-label {
+  font-family: var(--font-title);
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+/* ── Card / Panel ────────────────────────────────── */
+.card-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.375rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.25s ease;
+}
+
+.card-panel:hover {
+  border-color: rgba(212, 208, 240, 0.22);
+}
+
+.card-panel--accent {
+  background: rgba(212, 208, 240, 0.035);
+  border-color: rgba(212, 208, 240, 0.2);
+}
+
+/* ── Buttons ─────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, var(--btn-p-from), var(--btn-p-to));
+  color: var(--btn-p-text);
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+  opacity: 0.95;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary--full {
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--border-accent);
+  border-radius: 8px;
+  padding: 0.6rem 1.25rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--text-main);
+}
+
+.btn-ghost--sm {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.btn-ghost--danger {
+  color: var(--danger);
+  border-color: var(--danger-border);
+}
+
+.btn-ghost--danger:hover {
+  background: rgba(192, 64, 104, 0.1);
+  border-color: var(--danger);
+}
+
+.btn-ghost--dashed {
+  border-style: dashed;
+  width: 100%;
+  padding: 0.875rem;
+}
+
+/* ── Thinking / Oracle Pulse ─────────────────────── */
+@keyframes oracle-pulse {
+  0%, 100% {
+    opacity: 0.55;
+    box-shadow: 0 0 0 0 rgba(212, 208, 240, 0);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 18px 3px rgba(212, 208, 240, 0.22);
+  }
+}
+
+.thinking-pulse {
+  animation: oracle-pulse 2.4s ease-in-out infinite;
+}
+
+/* ── Display / Heading Text ──────────────────────── */
+/* Large Cinzel text for names, loading states, etc. */
+.display-title {
+  font-family: var(--font-title);
+  color: var(--accent);
+}
+
+/* ── Misc ─────────────────────────────────────────── */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
