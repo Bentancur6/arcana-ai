@@ -76,7 +76,8 @@ B 端咨询延展
 
 | 材料 | 用途 |
 |---|---|
-| [项目说明 PDF](docs/portfolio/project-brief/熊妍-AI产品经理项目说明.pdf) | 快速了解产品定位、用户场景、产品迭代、技术实现与交付结果 |
+| [项目说明（在线阅读）](docs/portfolio/project-brief/project-brief.md) | 快速了解产品定位、用户场景、产品迭代、技术实现与交付结果 |
+| [项目说明（下载/打印版 PDF）](docs/portfolio/project-brief/%E7%86%8A%E5%A6%8D-AI%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E.pdf) | 同一份项目说明的排版版本，便于下载或打印 |
 | [产品审计公开版](docs/portfolio/audit/tarot-assistant-audit-v0.3-public.md) | 查看用户流程、问题审计、需求优先级、质量评测和验收思路 |
 | [迭代记录公开版](docs/portfolio/changelog/CHANGELOG-public.md) | 查看版本演进、产品动机、技术路线、验证方式和工程教训 |
 | [双端功能逻辑流程图](docs/portfolio/flowcharts/v0.4-dual-mode-product-flow.png) | 查看 C 端访客流程与 B 端管理流程的整体关系 |
