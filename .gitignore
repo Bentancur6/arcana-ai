@@ -14,3 +14,11 @@ backups/
 *.jpeg
 *.log
 .DS_Store
+
+# Public portfolio materials explicitly approved for release
+!docs/portfolio/**/*.png
+!docs/portfolio/**/*.jpg
+!docs/portfolio/**/*.jpeg
+!docs/portfolio/**/*.pdf
+!docs/portfolio/**/*.zip
+!docs/portfolio/**/*.rar
